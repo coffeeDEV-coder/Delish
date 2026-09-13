@@ -2,16 +2,15 @@
 <html lang="en">
     <head>
         <title>Delish - reviews</title>
+        <link rel="icon" type="image/png" href="images/Delish_logo.png">
         <meta charset="UTF-8">
         <meta name="author" content="Dias Nazarov">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Delish City Cafe: signature dishes, all-day breakfasts, natural desserts, and specialty coffee. Here you can leave a review 'bout your visit">
     </head>
-
     <body>
         <header>
-            <h1>Feedbacks</h1>
-            <p>Here you can leave a review to our services!</p>
+            <h1>Customer reviews</h1>
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -20,8 +19,101 @@
                     <li><a href="colophon.html">About the development</a></li>
                 </ul>
             </nav>
+            <p>Here you can leave a feedback about our services!</p>
         </header>
-
+        <main>
+            <section class="review">
+                <h2>Leave your feedback</h2> 
+    <!-- 
+      Note: The form does not send anything or store because there is still no back end on thr website
+    -->
+                <form action="#" method="post">
+                    <fieldset>
+                        <legend>Guest Feedback &amp; Table Booking Details</legend>
+                        <p>
+                            <label for="guest_name">Your Full Name:</label><br>
+                            <input type="text" id="guest_name" name="guest_name" placeholder="Angelina Jolie" required>
+                        </p>
+                        <p>
+                            <label for="guest_email">Your Email Address:</label><br>
+                            <input type="email" id="guest_email" name="guest_email" placeholder="ayau@zakrytiyclub.com" required>
+                        </p>
+                        <p>
+                            <label for="guest_phone">Phone Number:</label><br>
+                            <input type="tel" id="guest_phone" name="guest_phone" placeholder="+7 (700) 000-00-00" required>
+                        </p>
+                        <p>
+                            <label for="visit_date">Date of Visit:</label><br>
+                            <input type="date" id="visit_date" name="visit_date" required>
+                        </p>
+                        <p>
+                            <label for="party_size">Number of Guests in Party:</label><br>
+                            <input type="number" id="party_size" name="party_size" min="1" max="20" value="2" required>
+                        </p>
+                        <p>
+                            <label for="rating">Rating:</label><br>
+                            <select id="rating" name="rating" required>
+                                <option value="">-- Choose Rating --</option>
+                                <option value="5">5 - Excellent</option>
+                                <option value="4">4 - Very Good</option>
+                                <option value="3">3 - Average</option>
+                                <option value="2">2 - Poor</option>
+                                <option value="1">1 - Terrible</option>
+                            </select>
+                        </p>
+                        <p>
+                            <strong>Would you recommend Delish Cafe to a friend?</strong><br>
+                            <input type="radio" id="recommend_yes" name="recommend" value="yes" checked>
+                            <label for="recommend_yes">Yes, definitely</label><br>                           
+                            <input type="radio" id="recommend_maybe" name="recommend" value="maybe">
+                            <label for="recommend_maybe">Maybe</label><br>
+                            
+                            <input type="radio" id="recommend_no" name="recommend" value="no">
+                            <label for="recommend_no">No</label>
+                        </p>
+                          <p>
+                            <label for="review_text">Your Detailed Review:</label><br>
+                            <textarea id="review_text" name="review_text" rows="5" cols="40" placeholder="The form does not send anything now" required></textarea>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="newsletter" name="newsletter" value="subscribe">
+                            <label for="newsletter">Subscribe to our newsletter for seasonal menu updates</label>
+                        </p>
+                        <p>
+                            <button type="submit">Submit Review</button>
+                            <button type="reset">Reset Form</button>
+                        </p>
+                    </fieldset>
+                </form>
+            </section>
+            <section class="recent reviews">
+                <h2>What our guest say about us?</h2>             
+                <article>
+                    <h3>Kate Bush.</h3>
+                    <p>The Croque Madame and Spanish Latte were absolute perfection. Quick service and cozy atmosphere!</p>
+                    <p><strong>Rating: </strong>5/5</p>
+                    <img src="images/review_1.png" width="300" height="400" alt="">
+                    <img src="images/gorgeous_woman-in-the-mirror.png" width="300" height="400" alt="">
+                </article>
+                <article>
+                    <h3>James Hetfield</h3>
+                    <p>The pasta and borcht was way toooo good. Ya know dudes, it smelled like my latest album, it is already in spotify btw!</p>
+                    <p><strong>Rating: </strong>5/5</p>
+                    <img src="images/review_2.png" width="300" height="400" alt="">
+                    <img src="images/James Hetfield.jpg" width="300" height="400" alt="">
         
+                </article>
+            </section>
+        </main>
+        <footer>
+            <hr>
+            <p>
+                Phone: <a href="tel:+77758263926">+7 (775) 826-39-26</a> &bull;
+                Email: <a href="mailto:lcfamilygroupkz@gmail.com">lcfamilygroupkz@gmail.com</a> &bull;
+                WhatsApp: <a href="https://wa.me/77758263926" target="_blank" rel="noopener">Contact Delish</a> &bull;
+                Instagram: <a href="https://www.instagram.com/delish.astana" target="_blank" rel="noopener">@delish.astana</a>
+            </p>
+            <p><small>&copy; 2026 Delish City Cafe. All rights reserved.</small></p>
+        </footer>
     </body>
 </html>
