@@ -1,0 +1,26 @@
+Tag checklist:
+The project was written fully by Dias Nazarov
+
+!DOCTYPE html - 1st line in every file
+html lang="" 2nd line in every file
+head
+meta charset="" 3
+meta name="author"
+meta name="description"
+meta name="viewport"
+title
+the tags upper were used in the head part in every file
+
+
+body
+header
+main
+footer
+These were used in each file inside the body structure
+
+section used inside the main, for instance line 26 in the index.html file
+article tags were mainly used in menu file for instance line 103, index.html
+figure - line 40, index.html
+figcaption - line 50, index.html
+
+table, caption th were used in index.html file starting with the line 41st line
