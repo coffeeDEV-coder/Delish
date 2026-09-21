@@ -7,6 +7,8 @@
         <meta name="author" content="Dias Nazarov">
         <title>Delish - Menu</title>
         <link rel="icon" type="image/png" href="images/Delish_logo.png">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/Dias_Nazarov.css">
     </head>
 
     <body>
@@ -15,11 +17,10 @@
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="profile.html">Profile</ali>
                     <li><a href="menu.html">Menu</a></li>
                     <li><a href="feedback.html">Leave a review</a></li>
                     <li><a href="registration.html">Registration</a></li>
-                    <li><a href="colophon.html">About the development</a></li>
                 </ul>
             </nav>
         </header>
@@ -33,6 +34,9 @@
                     <img src="images/croque_madam.png" width="300" alt="">
                     <p>Brioche with smoked turkey, cheddar and mozzarella cheeses, cream sauce, sunny-side-up egg, served with fresh salad mix garnish.</p>
                     <p><strong>Price:</strong> 3,990 ₸</p>
+                    <label for="qty-2">Quantity:</label>
+                    <input type="number" id="qty-2" name="quantity" min="1" max="20" value="1">
+                    <button class="btn add-to-cart" type="button">Add to cart</button>
                 </article>
 
                 <article class="dish-card">
@@ -40,13 +44,18 @@
                     <img src="images/Avocado_petunia.png" width="300" alt="">
                     <p>Fried eggs served with cucumbers, tomatoes, avocado, capers, spinach, salad mix with green olives, pickled onions, and tartine bread.</p>
                     <p><strong>Price:</strong> 4,690 ₸</p>
+                    <label for="qty-2">Quantity:</label>
+                    <input type="number" id="qty-2" name="quantity" min="1" max="20" value="1">
+                    <button class="btn add-to-cart" type="button">Add to cart</button>
                 </article>
 
                 <article class="dish-card">
                     <h3>Tiramisu Crepes</h3>
                     <img src="images/tiramisu_cripes.png" width="300" alt="">
                     <p>Crepes with coffee flavor and tiramisu cream, dusted with cocoa powder, served with fresh blueberries.</p>
-                    <p><strong>Price: </strong>3,090 ₸</p>
+                    <p><strong>Price: </strong>3,090 ₸</p><label for="qty-2">Quantity:</label>
+                    <input type="number" id="qty-2" name="quantity" min="1" max="20" value="1">
+                    <button class="btn add-to-cart" type="button">Add to cart</button>
                 </article>
 
                 <article class="dish-card">
@@ -54,10 +63,13 @@
                     <img src="images/fluffy_pancakes.png" width="300" alt="">
                     <p>Drizzled with delicate custard vanilla sauce, served with a scoop of chocolate ice cream and rich cherry jam.</p>
                     <p><strong>Price: </strong>3,890 ₸</p>
+                    <label for="qty-2">Quantity:</label>
+                    <input type="number" id="qty-2" name="quantity" min="1" max="20" value="1">
+                    <button class="btn add-to-cart" type="button">Add to cart</button>
                 </article>
             </section>
 
-            <section class="main dishes">
+            <section class="main-dishes">
                 <hr>
                 <h2>Main dishes</h2>
                 
@@ -66,6 +78,9 @@
                     <img src="images/borcht.png" width="300" alt="">
                     <p>Served with beef and fresh herbs, accompanied by a garlic butter pampushka (bread roll) and sour cream.</p>
                     <p><strong>Price: </strong>3,390 ₸</p>
+                    <label for="qty-2">Quantity:</label>
+                    <input type="number" id="qty-2" name="quantity" min="1" max="20" value="1">
+                    <button class="btn add-to-cart" type="button">Add to cart</button>
                 </article>
 
                 <article class="dish-card">
@@ -73,6 +88,9 @@
                     <img src="images/tom_yum.png" width="300" alt="">
                     <p>With shrimps, button mushrooms, cherry tomatoes, spinach, cilantro, lime, and chili pepper. Served with seasoned rice.</p>
                     <p><strong>Price: </strong>4,390 ₸</p>
+                    <label for="qty-2">Quantity:</label>
+                    <input type="number" id="qty-2" name="quantity" min="1" max="20" value="1">
+                    <button class="btn add-to-cart" type="button">Add to cart</button>
                 </article>
             </section>
 
@@ -84,6 +102,9 @@
                     <img src="images/classic_burger.png" width="300" alt="">
                     <p>Bun, house signature sauce, double marbled beef patty, cheddar cheese, onion, and pickles.</p>
                     <p><strong>Price: </strong>4,390 ₸</p>
+                    <label for="qty-2">Quantity:</label>
+                    <input type="number" id="qty-2" name="quantity" min="1" max="20" value="1">
+                    <button class="btn add-to-cart" type="button">Add to cart</button>
                 </article>
 
                 <article class="dish-card">
@@ -91,6 +112,9 @@
                     <img src="images/pepperoni.png" width="300" alt="">
                     <p>Roman-style crust with tomato sauce, mozzarella, pepperoni, and jalapeños.</p>
                     <p><strong>Price: </strong>3,990 ₸</p>
+                    <label for="qty-2">Quantity:</label>
+                    <input type="number" id="qty-2" name="quantity" min="1" max="20" value="1">
+                    <button class="btn add-to-cart" type="button">Add to cart</button>
                 </article>
             </section>
 
@@ -100,24 +124,36 @@
                     <h3>Cappuccino</h3>
                     <img src="images/cappucino.png" width="300" alt="">
                     <p><strong>Price: </strong>1,590 ₸ (300ml) / 1,890 ₸ (400ml)</p>
+                    <label for="qty-2">Quantity:</label>
+                    <input type="number" id="qty-2" name="quantity" min="1" max="20" value="1">
+                    <button class="btn add-to-cart" type="button">Add to cart</button>
                 </article>
 
                 <article class="drinks-card tea">
                     <h3>English Breakfast / Earl Grey</h3>
                     <img src="images/english_tea.png" width="300" alt="">
                     <p><strong>Price: </strong>1,190 ₸ (400ml) / 1,590 ₸ (600ml)</p>
+                    <label for="qty-2">Quantity:</label>
+                    <input type="number" id="qty-2" name="quantity" min="1" max="20" value="1">
+                    <button class="btn add-to-cart" type="button">Add to cart</button>
                 </article>
 
                 <article class="drinks-card matcha">
                     <h3>Matcha Frappuccino (470 ml)</h3>
                     <img src="images/matcha_frappuccino.png" width="300" alt="">
                     <p><strong>Price: 2,890 ₸</strong></p>
+                    <label for="qty-2">Quantity:</label>
+                    <input type="number" id="qty-2" name="quantity" min="1" max="20" value="1">
+                    <button class="btn add-to-cart" type="button">Add to cart</button>
                 </article>
 
                 <article class="drinks-card signature">
                     <h3>Citrus Mix</h3>
                     <img src="images/citrus_mix.png" alt="" width="300">
                     <p><strong>Price: </strong>1,890 ₸ (470ml) / 3,290 ₸ (1000ml)</p>
+                    <label for="qty-2">Quantity:</label>
+                    <input type="number" id="qty-2" name="quantity" min="1" max="20" value="1">
+                    <button class="btn add-to-cart" type="button">Add to cart</button>
                 </article>
             </section>
          
@@ -127,13 +163,14 @@
         <hr>
 
         <footer>
+            <hr>
             <p>
                 Phone: <a href="tel:+77758263926">+7 (775) 826-39-26</a> &bull;
                 Email: <a href="mailto:lcfamilygroupkz@gmail.com">lcfamilygroupkz@gmail.com</a> &bull;
                 WhatsApp: <a href="https://wa.me/77758263926" target="_blank" rel="noopener">Contact Delish</a> &bull;
                 Instagram: <a href="https://www.instagram.com/delish.astana" target="_blank" rel="noopener">@delish.astana</a>
             </p>
-            <p><small>&copy; 2026 Delish City Cafe. All rights reserved.</small></p>
+            <p><small>&copy; 2026 Delish City Cafe. All rights reserved. &copy; <a href="colophon.html">About the development</a></small></p>
         </footer>
     </body>
 </html>

@@ -7,11 +7,13 @@
         <meta name="author" content="Dias Nazarov">
         <title>Delish City Cafe - Home</title>
         <link rel="icon" type="image/png" href="images/Delish_logo.png">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/Dias_Nazarov.css">
     </head>
 
     <body>
         <header>
-            <h1>Delish City Cafe</h1>
+            <h1>Delish</h1>
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -19,29 +21,50 @@
                     <li><a href="menu.html">Menu</a></li>
                     <li><a href="feedback.html">Leave a review</a></li>
                     <li><a href="registration.html">Registration</a></li>
-                    <li><a href="colophon.html">About the development</a></li>
                 </ul>
             </nav>
         </header>
-        <main>
-            <section>
+        <section class="hero">
+            <div class="hero-content">
                 <h2>Welcome to Delish City Cafe</h2>
                 <p>Looking for a cozy spot to enjoy exceptional food and specialty coffee? <strong>Delish</strong> is a popular urban cafe created to bring you good mood with delicious meals, outstanding pastries, and genuine warmth.</p>
-                <p>Whether you need a quiet space to work on your laptop, catch up with friends, or enjoy a relaxed family lunch with children, everyone feels right at home here. Best of all, our locations are <mark>Pets friendly</mark>, meaning your four-legged companions are always welcome guests!</p>
-
-                <article>
+                <a href="menu.html" class="hero-btn">View menu</a>
+            </div>                      
+        </section>
+        <main>
+            <section>               
+                <article class="features">
                     <h3>What makes us special</h3>
-                    <ul>
-                        <li>Hearty and sweet breakfasts, served all day long</li>
-                        <li>Signature drinks crafted by baristas, who stole our hearts</li>
-                        <li>Specially selected culinary dishes spanning cuisines from around the world</li>
-                        <li>Artisan desserts made exclusively from 100% natural ingredients without artificial additives.</li>
-                    </ul>
-                </article>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <img src="images/breakfast_img.jpg">
+                            <div class="feature-content">
+                                <h4>All-day breakfasts</h4>
+                                <p>Hearty and sweet breakfasts, served all day long.</p>
+                            </div>  
+                        </div>
+                        <div class="feature-card">
+                            <img src="images/signature_drinks.jpg" alt="Signature drinks">
+                            <div class="feature-content">
+                                <h4> Signature Drinks</h4>
+                                <p>Crafted by baristas who genuinely stole our hearts.</p>
 
-                <figure>
-                    <table>
-                        <caption>Opening Hours</caption>
+                            </div>
+                            
+                        </div>
+
+                        <div class="feature-card">
+                            <img src="images/cuisine.jpg" alt="World's cuisine">
+                            <div class="feature-content">
+                                <h4> World Cuisine</h4>
+                                <p>Specially selected culinary dishes spanning cuisines from around the world.</p>
+                            </div>
+                        </div>
+                    </div>                  
+                </article>
+                <figure class="schedule-section">
+                    <table class="schedule-table">
+                        <h3>Opening hours</h3>
                         <thead>
                             <tr>
                                 <th>Day</th>
@@ -64,19 +87,16 @@
                       
                         </tbody>
                     </table>
-                    <figcaption>Our daily operational schedule for all visitors.</figcaption>
+                    <figcaption class="sch-note">Our daily operational schedule for all visitors.</figcaption>
                 </figure>
 
-                <figure>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td><img src="images/img1.jpeg" alt="Customer, enoying coffee and the jazz atmosphere in the cafe" width="300"></td>
-                                <td><img src="images/img6.jpeg" alt="Interior inside" width="300"></td>
-                                <td><img src="images/img4.jpeg" alt="Delish wall" width="300"></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <figure class="gallery">
+                    <ul>
+                        <li><img src="images/img1.jpeg" width="300" alt="Customer, enoying coffee and the jazz atmosphere in the cafe"></li>
+                        <li><img src="images/img6.jpeg" width="300" alt="Customer, enoying coffee and the jazz atmosphere in the cafe"></li>
+                        <li><img src="images/img4.jpeg" width="300" alt="Customer, enoying coffee and the jazz atmosphere in the cafe"></li>
+                    </ul>
+                    
                     <figcaption>Our interior centerpiece: an original designer panel featuring a Kazakh girl in traditional earrings &mdash; blending cultural heritage with modern art.</figcaption>
                 </figure>
             </section>
@@ -107,7 +127,7 @@
                 WhatsApp: <a href="https://wa.me/77758263926" target="_blank" rel="noopener">Contact Delish</a> &bull;
                 Instagram: <a href="https://www.instagram.com/delish.astana" target="_blank" rel="noopener">@delish.astana</a>
             </p>
-            <p><small>&copy; 2026 Delish City Cafe. All rights reserved.</small></p>
+            <p><small>&copy; 2026 Delish City Cafe. All rights reserved. &copy; <a href="colophon.html">About the development</a></small></p>
         </footer>
-    </body>5
+    </body>
 </html>
