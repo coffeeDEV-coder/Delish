@@ -425,6 +425,149 @@ input[type="number"] {
 }
 
 /* registration and login pages */
+/* ==========================================
+   Стили исключительно для страницы регистрации (.auth-page)
+   ========================================== */
+
 .auth-page {
+    display: flex;
+    justify-content: center;
     align-items: center;
+    min-height: calc(100vh - 250px);
+    padding: 40px 20px;
+}
+
+.auth-page .auth-card {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 420px;
+    padding: 35px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e0e0e0;
+}
+
+.auth-page .auth-card h2 {
+    margin-top: 0;
+    margin-bottom: 24px;
+    color: #4eb8b8; /* Использован основной бирюзовый цвет вашего шапки/футера */
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.auth-page .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.auth-page .form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 6px;
+}
+
+.auth-page .form-group input {
+    padding: 10px 14px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.auth-page .form-group input:focus {
+    border-color: #4eb8b8;
+    box-shadow: 0 0 0 3px rgba(78, 184, 184, 0.2);
+}
+
+.auth-page .button-group {
+    display: flex;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.auth-page .btn {
+    flex: 1;
+    padding: 11px 0;
+    text-align: center;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    box-sizing: border-box;
+    transition: background-color 0.2s ease;
+}
+
+.auth-page .btn-primary {
+    background-color: #4eb8b8;
+    color: #ffffff;
+    border: none;
+}
+
+.auth-page .btn-primary:hover {
+    background-color: #3ca2a2;
+}
+
+.auth-page .btn-secondary {
+    background-color: #f2f2f2;
+    color: #333333;
+    border: 1px solid #cccccc;
+    display: inline-block;
+}
+
+.auth-page .btn-secondary:hover {
+    background-color: #e2e2e2;
+}
+
+main .profile-info {
+    max-width: 650px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e0e0e0;
+}
+
+main .profile-info h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #4eb8b8;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+
+main .profile-info img {
+    display: block;
+    width: 220px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+main .profile-info dl {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    row-gap: 12px;
+    align-items: center;
+}
+
+main .profile-info dt {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #777777;
+}
+
+main .profile-info dd {
+    margin: 0;
+    font-size: 1rem;
+    color: #222222;
+    font-weight: 500;
 }
