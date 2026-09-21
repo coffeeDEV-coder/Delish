@@ -1,5 +1,7 @@
 /* main page stillization */
 
+
+/* menu banner */
 .hero {
     width: 100%;
     margin: 0;
@@ -42,6 +44,8 @@
     transform: translate(-2px);
 }
 
+
+/* feature cards */
 .features {
     margin: 3rem 0;
 }
@@ -105,6 +109,9 @@
 }
 
 
+
+
+/* workin hours */
 .schedule-section {
     max-width: 600px;
     margin: 3rem auto;
@@ -152,6 +159,9 @@
 }
 
 
+
+
+/* gallery of photos */
 figure.gallery {
     max-width: 1200px;
     margin: 3rem auto;
@@ -296,6 +306,9 @@ input[type="number"] {
 }
 
 
+
+/* review page */
+
 .review {
     background-color: #ffffff;
     padding: 30px;
@@ -425,10 +438,6 @@ input[type="number"] {
 }
 
 /* registration and login pages */
-/* ==========================================
-   Стили исключительно для страницы регистрации (.auth-page)
-   ========================================== */
-
 .auth-page {
     display: flex;
     justify-content: center;
@@ -450,7 +459,7 @@ input[type="number"] {
 .auth-page .auth-card h2 {
     margin-top: 0;
     margin-bottom: 24px;
-    color: #4eb8b8; /* Использован основной бирюзовый цвет вашего шапки/футера */
+    color: #4eb8b8; 
     font-size: 1.5rem;
     text-align: center;
 }
@@ -522,6 +531,9 @@ input[type="number"] {
     background-color: #e2e2e2;
 }
 
+
+
+/* profile page */
 main .profile-info {
     max-width: 650px;
     margin: 40px auto;
