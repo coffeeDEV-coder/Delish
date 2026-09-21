@@ -74,9 +74,9 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Помещает центр блока ровно в центр карточки */
+    transform: translate(-50%, -50%); 
     text-align: center;
-    width: 90%;                       /* Задает ширину для корректного переноса текста */
+    width: 90%;                      
     z-index: 2
     
 }
@@ -106,7 +106,12 @@
 
 
 .schedule-section {
-    margin: 3rem 0;
+    max-width: 600px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     text-align: center;
 }
 .schedule-section h3 {
@@ -114,6 +119,36 @@
     font-size: 2rem;
     color: #2C3E50;
     margin-bottom: 1.5rem;
+}
+
+.schedule-table {
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+.schedule-table th {
+    font-weight: 600;
+    color: #2C3E50;
+    padding: 0.75rem 1rem;
+    border-bottom: 2px solid #eef5f6;
+    text-align: center;
+}
+.schedule-table td, 
+.schedule-table tbody th {
+    padding: 0.75rem 1rem;
+    color: #555555;
+    border-bottom: 1px solid #eef5f6;
+    font-weight: normal;
+    text-align: center;
+}
+.schedule-table tbody th {
+    font-weight: 600;
+    color: #2C3E50;
+}
+
+.sch-note {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    margin-top: 1rem;
 }
 
 
@@ -137,7 +172,7 @@ figure.gallery {
 .gallery li img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Заполняет блок без искажения пропорций */
+    object-fit: cover; 
     display: block;
     transition: transform 0.3s ease;
 }
@@ -150,7 +185,7 @@ figure.gallery {
     color: #555555;
     line-height: 1.5;
     max-width: 800px;
-    margin: 0 auto;       /* Центрируем блок подписи */
+    margin: 0 auto;       
 }
 
 /* Menu page */
@@ -177,7 +212,7 @@ label + input {
     margin-left: 8px;
 }
 .dish-card, .drinks-card {
-    position: relative; /* Relative positioning used as a containing block for absolute children */
+    position: relative; 
     transition: transform 0.2s ease;
 }
 input[type="number"] {
@@ -192,22 +227,22 @@ input[type="number"] {
 .btn.add-to-cart:focus {
     outline: 3px solid #b2dfdb;
 }
-.breakfasts .dish-card:first-child {
-    border-top: 3px solid #4db6ac; /* Highlights the very first item */
+.breakfasts, .main-dishes, .beverages, .fast-food .dish-card:first-child {
+    border-top: 3px solid #4db6ac;
 }
 .price-text::before {
-    content: "🏷️ "; /* Adds tag icon before price */
+    content: "🏷️ "; 
 }
-.breakfasts {
+.breakfasts, .main-dishes, .beverages, .fast-food {
     display: flex;
-    flex-direction: row; /* Requirement: flex-direction */
-    flex-wrap: wrap; /* Requirement: flex-wrap */
+    flex-direction: row; 
+    flex-wrap: wrap; 
     gap: 20px;
-    justify-content: center; /* Centering technique 2: Flexbox centering */
+    justify-content: center;
     align-items: stretch;
 }
 .dish-card {
-    flex: 1 1 260px; /* Grow and shrink cards in row */
+    flex: 1 1 260px; 
     max-width: 320px;
     display: flex;
     flex-direction: column;
@@ -220,9 +255,47 @@ input[type="number"] {
     border-radius: 8px;
     margin-bottom: 10px;
 }
+.dish-card input[type="number"] {
+    width: 60px;
+    padding: 0.4rem;
+    border: 1px solid #5CBEC4;
+    border-radius: 8px;
+    outline: none;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #2C3E50;
+    margin-right: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.dish-card input[type="number"]:focus {
+    border-color: #48a1a7;
+    box-shadow: 0 0 0 3px rgba(92, 190, 196, 0.25);
+}
+.btn.add-to-cart {
+    display: block;           
+    width: 100%;               
+    padding: 0.75rem 1.25rem;
+    background-color: #5CBEC4; 
+    color: #ffffff;
+    border: none;
+    border-radius: 20px;     
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.15s ease, box-shadow 0.25s ease;
+    box-shadow: 0 2px 8px rgba(92, 190, 196, 0.3);
+}
+.btn.add-to-cart:hover {
+    background-color: #48a1a7;
+    box-shadow: 0 4px 12px rgba(92, 190, 196, 0.45);
+    transform: translateY(-1px);
+}
+.btn.add-to-cart:active {
+    transform: translateY(0);
+}
 
 
-/* review page */
 .review {
     background-color: #ffffff;
     padding: 30px;
@@ -239,7 +312,7 @@ input[type="number"] {
 .review legend {
   font-weight: 600;
   font-size: 1.1rem;
-  color: #00838f; /* Акцентный цвет страницы */
+  color: #00838f; 
   padding: 0 10px;
 }
 .review p {
@@ -316,8 +389,6 @@ input[type="number"] {
   flex-direction: column;
   gap: 25px;
 }
-
-/* Оформление карточки каждого отзыва */
 .recent article,
 .reviews article {
   background-color: #ffffff;
@@ -340,14 +411,12 @@ input[type="number"] {
   color: #555;
   margin-bottom: 10px;
 }
-
-/* Сетка для картинок внутри отзыва */
 .recent article img,
 .reviews article img {
   width: 100%;
   max-width: 250px;
   height: 250px;
-  object-fit: cover; /* Сохраняет пропорции фото */
+  object-fit: cover; 
   border-radius: 8px;
   margin-right: 12px;
   margin-top: 10px;
@@ -356,5 +425,6 @@ input[type="number"] {
 }
 
 /* registration and login pages */
-/* ==========================================
-   СТИЛИ ДЛЯ СТРАНИЦ АВТОРИЗАЦИИ И РЕГИСТРАЦИИ
+.auth-page {
+    align-items: center;
+}
