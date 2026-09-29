@@ -1,115 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-         <meta charset="UTF-8">
+        <meta charset="UTF-8">
         <meta name="author" content="Dias Nazarov">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Delish City Cafe: signature dishes, all-day breakfasts, natural desserts, and specialty coffee. Here you can leave a review 'bout your visit">
-        <title>Delish - reviews</title>
+        <title>Delish - Reviews</title>
         <link rel="icon" type="image/png" href="images/Delish_logo.png">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/Dias_Nazarov.css">
-         
     </head>
+    
     <body>
-        <header>
-            <h1>Customer reviews</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="profile.html">Profile</ali>
-                    <li><a href="menu.html">Menu</a></li>
-                    <li><a href="feedback.html">Leave a review</a></li>
-                    <li><a href="registration.html">Registration</a></li>
-                </ul>
+        <header class="custom-header">
+            <nav class="navbar navbar-expand-md navbar-dark w-100 container">
+                <div class="container-fluid p-0">
+                    <a class="navbar-brand h1 mb-0 fw-bold fs-2" href="index.html">Customer reviews</a>
+                    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                        <ul class="navbar-nav gap-2">
+                            <li class="nav-item"><a class="nav-link text-white fw-semibold" href="index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link text-white fw-semibold" href="profile.html">Profile</a></li>
+                            <li class="nav-item"><a class="nav-link text-white fw-semibold" href="menu.html">Menu</a></li>
+                            <li class="nav-item"><a class="nav-link active fw-semibold" href="feedback.html">Leave a review</a></li>
+                            <li class="nav-item"><a class="nav-link text-white fw-semibold" href="registration.html">Registration</a></li>
+                        </ul>
+                    </div>
+                </div>
             </nav>
         </header>
-        <main>
-            <section class="review">
-                <h2>Leave your feedback</h2> 
-                <form action="#" method="post">
-                    <fieldset>
-                        <legend>Guest Feedback &amp; Table Booking Details</legend>
-                        <p>
-                            <label for="guest_name">Your Full Name:</label><br>
-                            <input type="text" id="guest_name" name="guest_name" placeholder="Angelina Jolie" required>
-                        </p>
-                        <p>
-                            <label for="guest_email">Your Email Address:</label><br>
-                            <input type="email" id="guest_email" name="guest_email" placeholder="ayau@zakrytiyclub.com" required>
-                        </p>
-                        <p>
-                            <label for="guest_phone">Phone Number:</label><br>
-                            <input type="tel" id="guest_phone" name="guest_phone" placeholder="+7 (700) 000-00-00" required>
-                        </p>
-                        <p>
-                            <label for="visit_date">Date of Visit:</label><br>
-                            <input type="date" id="visit_date" name="visit_date" required>
-                        </p>
-                        <p>
-                            <label for="party_size">Number of Guests in Party:</label><br>
-                            <input type="number" id="party_size" name="party_size" min="1" max="20" value="2" required>
-                        </p>
-                        <p>
-                            <label for="rating">Rating:</label><br>
-                            <select id="rating" name="rating" required>
-                                <option value="">-- Choose Rating --</option>
-                                <option value="5">5 - Excellent</option>
-                                <option value="4">4 - Very Good</option>
-                                <option value="3">3 - Average</option>
-                                <option value="2">2 - Poor</option>
-                                <option value="1">1 - Terrible</option>
-                            </select>
-                        </p>
-                        <p>
-                            <strong>Would you recommend Delish Cafe to a friend?</strong><br>
-                            <input type="radio" id="recommend_yes" name="recommend" value="yes" checked>
-                            <label for="recommend_yes">Yes, definitely</label><br>                           
-                            <input type="radio" id="recommend_maybe" name="recommend" value="maybe">
-                            <label for="recommend_maybe">Maybe</label><br>
+
+        <main class="container my-5">
+            <section class="review mb-5">
+                <h2 class="fw-bold mb-4 border-bottom pb-2">Leave your feedback</h2> 
+                
+                <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 bg-white">
+                    <form action="#" method="post">
+                        <fieldset class="border-0 p-0 m-0">
+                            <legend class="h5 fw-bold text-custom-primary mb-4">Guest Feedback &amp; Table Booking Details</legend>
                             
-                            <input type="radio" id="recommend_no" name="recommend" value="no">
-                            <label for="recommend_no">No</label>
-                        </p>
-                          <p>
-                            <label for="review_text">Your Detailed Review:</label><br>
-                            <textarea id="review_text" name="review_text" rows="5" cols="40" placeholder="The form does not send anything now" required></textarea>
-                        </p>
-                        <p>
-                            <button type="submit">Submit Review</button>
-                            <button type="reset">Reset Form</button>
-                        </p>
-                    </fieldset>
-                </form>
+                            <div class="row g-3">
+                                <div class="col-12 col-md-6 mb-3">
+                                    <label for="guest_name" class="form-label fw-semibold text-secondary">Your Full Name:</label>
+                                    <input type="text" class="form-control rounded-3" id="guest_name" name="guest_name" placeholder="Angelina Jolie" required>
+                                </div>
+                                
+                                <div class="col-12 col-md-6 mb-3">
+                                    <label for="guest_email" class="form-label fw-semibold text-secondary">Your Email Address:</label>
+                                    <input type="email" class="form-control rounded-3" id="guest_email" name="guest_email" placeholder="ayau@zakrytiyclub.com" required>
+                                </div>
+
+                                <div class="col-12 col-md-4 mb-3">
+                                    <label for="guest_phone" class="form-label fw-semibold text-secondary">Phone Number:</label>
+                                    <input type="tel" class="form-control rounded-3" id="guest_phone" name="guest_phone" placeholder="+7 (700) 000-00-00" required>
+                                </div>
+
+                                <div class="col-12 col-md-4 mb-3">
+                                    <label for="visit_date" class="form-label fw-semibold text-secondary">Date of Visit:</label>
+                                    <input type="date" class="form-control rounded-3" id="visit_date" name="visit_date" required>
+                                </div>
+
+                                <div class="col-12 col-md-4 mb-3">
+                                    <label for="party_size" class="form-label fw-semibold text-secondary">Number of Guests in Party:</label>
+                                    <input type="number" class="form-control rounded-3" id="party_size" name="party_size" min="1" max="20" value="2" required>
+                                </div>
+
+                                <div class="col-12 mb-3">
+                                    <label for="rating" class="form-label fw-semibold text-secondary">Rating:</label>
+                                    <select class="form-select rounded-3" id="rating" name="rating" required>
+                                        <option value="">-- Choose Rating --</option>
+                                        <option value="5">5 - Excellent</option>
+                                        <option value="4">4 - Very Good</option>
+                                        <option value="3">3 - Average</option>
+                                        <option value="2">2 - Poor</option>
+                                        <option value="1">1 - Terrible</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-12 mb-3">
+                                    <label class="form-label fw-semibold text-secondary d-block">Would you recommend Delish Cafe to a friend?</label>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="recommend_yes" name="recommend" value="yes" checked>
+                                        <label class="form-check-label" for="recommend_yes">Yes, definitely</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="recommend_maybe" name="recommend" value="maybe">
+                                        <label class="form-check-label" for="recommend_maybe">Maybe</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="recommend_no" name="recommend" value="no">
+                                        <label class="form-check-label" for="recommend_no">No</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 mb-4">
+                                    <label for="review_text" class="form-label fw-semibold text-secondary">Your Detailed Review:</label>
+                                    <textarea class="form-control rounded-3" id="review_text" name="review_text" rows="5" placeholder="The form does not send anything now" required></textarea>
+                                </div>
+
+                                <div class="col-12 d-flex gap-3">
+                                    <button type="submit" class="btn btn-custom-cart fw-semibold rounded-pill px-4 py-2">Submit Review</button>
+                                    <button type="reset" class="btn btn-outline-secondary fw-semibold rounded-pill px-4 py-2">Reset Form</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
             </section>
-            <section class="recent reviews">
-                <h2>What our guest say about us?</h2>             
-                <article>
-                    <h3>Kate Bush.</h3>
-                    <p>The Croque Madame and Spanish Latte were absolute perfection. Quick service and cozy atmosphere!</p>
-                    <p><strong>Rating: </strong>5/5</p>
-                    <img src="images/review_1.png" width="300" height="400" alt="">
-                    <img src="images/gorgeous_woman-in-the-mirror.png" width="300" height="400" alt="">
-                </article>
-                <article>
-                    <h3>James Hetfield</h3>
-                    <p>The pasta and borcht was way toooo good. Ya know dudes, it smelled like my latest album, it is already in spotify btw!</p>
-                    <p><strong>Rating: </strong>5/5</p>
-                    <img src="images/review_2.png" width="300" height="400" alt="">
-                    <img src="images/James Hetfield.jpg" width="300" height="400" alt="">
-        
-                </article>
+            <section class="recent-reviews">
+                <h2 class="fw-bold mb-4 border-bottom pb-2">What our guest say about us?</h2>             
+                
+                <div class="d-flex flex-column gap-4">
+                    <article class="card border-0 shadow-sm rounded-4 p-4 bg-white border-start border-4 border-custom-accent">
+                        <h3 class="h5 fw-bold text-dark mb-1">Kate Bush</h3>
+                        <p class="text-secondary mb-2">The Croque Madame and Spanish Latte were absolute perfection. Quick service and cozy atmosphere!</p>
+                        <p class="mb-3"><strong>Rating: </strong><span class="text-warning">★</span> 5/5</p>
+                        
+                        <div class="row g-3">
+                            <div class="col-6 col-sm-4 col-md-3">
+                                <img src="images/review_1.png" class="img-fluid rounded-3 object-fit-cover w-100" style="height: 200px;" alt="Review photo 1">
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3">
+                                <img src="images/gorgeous_woman-in-the-mirror.png" class="img-fluid rounded-3 object-fit-cover w-100" style="height: 200px;" alt="Review photo 2">
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card border-0 shadow-sm rounded-4 p-4 bg-white border-start border-4 border-custom-accent">
+                        <h3 class="h5 fw-bold text-dark mb-1">James Hetfield</h3>
+                        <p class="text-secondary mb-2">The pasta and borcht was way toooo good. Ya know dudes, it smelled like my latest album, it is already in spotify btw!</p>
+                        <p class="mb-3"><strong>Rating: </strong><span class="text-warning">★</span> 5/5</p>
+                        
+                        <div class="row g-3">
+                            <div class="col-6 col-sm-4 col-md-3">
+                                <img src="images/review_2.png" class="img-fluid rounded-3 object-fit-cover w-100" style="height: 200px;" alt="Review photo 1">
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3">
+                                <img src="images/James Hetfield.jpg" class="img-fluid rounded-3 object-fit-cover w-100" style="height: 200px;" alt="James Hetfield">
+                            </div>
+                        </div>
+                    </article>
+                </div>
             </section>
         </main>
-        <footer>
-            <hr>
-            <p>
-                Phone: <a href="tel:+77758263926">+7 (775) 826-39-26</a> &bull;
-                Email: <a href="mailto:lcfamilygroupkz@gmail.com">lcfamilygroupkz@gmail.com</a> &bull;
-                WhatsApp: <a href="https://wa.me/77758263926" target="_blank" rel="noopener">Contact Delish</a> &bull;
-                Instagram: <a href="https://www.instagram.com/delish.astana" target="_blank" rel="noopener">@delish.astana</a>
-            </p>
-            <p><small>&copy; 2026 Delish City Cafe. All rights reserved.</small></p>
+
+        <footer class="custom-footer text-white py-4 mt-5 text-center">
+            <div class="container d-flex flex-column align-items-center gap-2">
+                <p class="mb-0 small">
+                    Phone: <a href="tel:+77758263926" class="text-white text-decoration-underline">+7 (775) 826-39-26</a> &bull;
+                    Email: <a href="mailto:lcfamilygroupkz@gmail.com" class="text-white text-decoration-underline">lcfamilygroupkz@gmail.com</a> &bull;
+                    WhatsApp: <a href="https://wa.me/77758263926" target="_blank" rel="noopener" class="text-white text-decoration-underline">Contact Delish</a> &bull;
+                    Instagram: <a href="https://www.instagram.com/delish.astana" target="_blank" rel="noopener" class="text-white text-decoration-underline">@delish.astana</a>
+                </p>
+                <p class="mb-0 small opacity-75">&copy; 2026 Delish City Cafe. All rights reserved.</p>
+            </div>
         </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     </body>
 </html>

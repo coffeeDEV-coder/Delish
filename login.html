@@ -5,52 +5,68 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Delish City Cafe: signature dishes, all-day breakfasts, natural desserts, and specialty coffee. Enjoy a cozy atmosphere and friendly service!">
         <meta name="author" content="Dias Nazarov">
-        <title>Delish City Cafe - Home</title>
+        <title>Delish - Login</title>
         <link rel="icon" type="image/png" href="images/Delish_logo.png">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">       
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/Dias_Nazarov.css">
     </head>
+    
+    <body class="d-flex flex-column min-vh-100 bg-light">
 
-    <body>
-        <header>
-            <h1>Login</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="profile.html">Profile</ali>
-                    <li><a href="menu.html">Menu</a></li>
-                    <li><a href="feedback.html">Leave a review</a></li>
-                    <li><a href="registration.html">Registration</a></li>
-                </ul>
+        <header class="custom-header">
+            <nav class="navbar navbar-expand-md navbar-dark w-100 container">
+                <div class="container-fluid p-0">
+                    <a class="navbar-brand h1 mb-0 fw-bold fs-2" href="index.html">Login</a>
+                    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                        <ul class="navbar-nav gap-2">
+                            <li class="nav-item"><a class="nav-link text-white fw-semibold" href="index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link text-white fw-semibold" href="profile.html">Profile</a></li>
+                            <li class="nav-item"><a class="nav-link text-white fw-semibold" href="menu.html">Menu</a></li>
+                            <li class="nav-item"><a class="nav-link text-white fw-semibold" href="feedback.html">Leave a review</a></li>
+                            <li class="nav-item"><a class="nav-link text-white fw-semibold" href="registration.html">Registration</a></li>
+                        </ul>
+                    </div>
+                </div>
             </nav>
         </header>
-        <main class="auth-page">
-            <section class="auth-card">
-                <h2>Log in your account</h2>
-                <div class="form-group"><label for="username">Username: </label>
-                <input type="text" id="username" name="Username"></div>
-                <div class="form-group"><label for="email">Email: </label>
-                <input type="text" id="email" name="email"></div>
-                <div class="form-group"><label for="password">Password: </label>
-                <input type="text" id="password" name="Password"></div>
-                <div class="form-group"><label for="check_password">Confirm password: </label>
-                <input type="text" id="check_password" name="check_password"></div>
-                <div class="button-group">
-                    <button><a href="registration.html">registration</a></button>  <input type="submit" value="login">
-                </div>
+        <main class="container flex-grow-1 d-flex align-items-center justify-content-center my-5">
+            <div class="card border-0 shadow-sm rounded-4 p-4 p-sm-5 bg-white w-100" style="max-width: 440px;">
+                <h2 class="fw-bold text-center mb-4 text-dark">Log in your account</h2>
                 
-            </section>
-        </main>
+                <form action="#" method="post">
+                    <div class="mb-3">
+                        <label for="username" class="form-label fw-semibold text-secondary">Username or Email:</label>
+                        <input type="text" class="form-control rounded-3 py-2" id="username" name="username" placeholder="Enter username or email" required>
+                    </div>
 
-        <footer>
-            <hr>
-            <p>
-                Phone: <a href="tel:+77758263926">+7 (775) 826-39-26</a> &bull;
-                Email: <a href="mailto:lcfamilygroupkz@gmail.com">lcfamilygroupkz@gmail.com</a> &bull;
-                WhatsApp: <a href="https://wa.me/77758263926" target="_blank" rel="noopener">Contact Delish</a> &bull;
-                Instagram: <a href="https://www.instagram.com/delish.astana" target="_blank" rel="noopener">@delish.astana</a>
-            </p>
-            <p><small>&copy; 2026 Delish City Cafe. All rights reserved. &copy; <a href="colophon.html">About the development</a></small></p>
+                    <div class="mb-4">
+                        <label for="password" class="form-label fw-semibold text-secondary">Password:</label>
+                        <input type="password" class="form-control rounded-3 py-2" id="password" name="password" required>
+                    </div>
+
+                    <div class="d-flex flex-column gap-2 mt-4">
+                        <button type="submit" class="btn btn-custom-cart w-100 fw-semibold rounded-pill py-2">Login</button>
+                        <a href="registration.html" class="btn btn-outline-secondary w-100 fw-semibold rounded-pill py-2 text-decoration-none">Create an account</a>
+                    </div>
+                </form>
+            </div>
+        </main>
+        <footer class="custom-footer text-white py-4 mt-auto text-center">
+            <div class="container d-flex flex-column align-items-center gap-2">
+                <p class="mb-0 small">
+                    Phone: <a href="tel:+77758263926" class="text-white text-decoration-underline">+7 (775) 826-39-26</a> &bull;
+                    Email: <a href="mailto:lcfamilygroupkz@gmail.com" class="text-white text-decoration-underline">lcfamilygroupkz@gmail.com</a> &bull;
+                    WhatsApp: <a href="https://wa.me/77758263926" target="_blank" rel="noopener" class="text-white text-decoration-underline">Contact Delish</a> &bull;
+                    Instagram: <a href="https://www.instagram.com/delish.astana" target="_blank" rel="noopener" class="text-white text-decoration-underline">@delish.astana</a>
+                </p>
+                <p class="mb-0 small opacity-75">&copy; 2026 Delish City Cafe. All rights reserved. &copy; <a href="colophon.html" class="text-white text-decoration-underline">About the development</a></p>
+            </div>
         </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     </body>
 </html>

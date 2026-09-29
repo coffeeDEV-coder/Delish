@@ -7,170 +7,263 @@
         <meta name="author" content="Dias Nazarov">
         <title>Delish - Menu</title>
         <link rel="icon" type="image/png" href="images/Delish_logo.png">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">       
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/Dias_Nazarov.css">
     </head>
-
     <body>
-        <header>
-            <h1>Menu</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="profile.html">Profile</ali>
-                    <li><a href="menu.html">Menu</a></li>
-                    <li><a href="feedback.html">Leave a review</a></li>
-                    <li><a href="registration.html">Registration</a></li>
-                </ul>
+        <header class="custom-header">
+            <nav class="navbar navbar-expand-md navbar-dark w-100 container">
+                <div class="container-fluid p-0">
+                    <a class="navbar-brand h1 mb-0 fw-bold fs-2" href="index.html">Menu</a>
+                    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                        <ul class="navbar-nav gap-2">
+                            <li class="nav-item"><a class="nav-link text-white fw-semibold" href="index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link text-white fw-semibold" href="profile.html">Profile</a></li>
+                            <li class="nav-item"><a class="nav-link active fw-semibold" href="menu.html">Menu</a></li>
+                            <li class="nav-item"><a class="nav-link text-white fw-semibold" href="feedback.html">Leave a review</a></li>
+                            <li class="nav-item"><a class="nav-link text-white fw-semibold" href="registration.html">Registration</a></li>
+                        </ul>
+                    </div>
+                </div>
             </nav>
-        </header>
-
-        <main>
-            <section class="breakfasts">
-                <hr>
-                <h2>Breakfasts</h2>
-                <article class="dish-card">
-                    <h3>Croque madam</h3>
-                    <img src="images/croque_madam.png" width="300" alt="">
-                    <p>Brioche with smoked turkey, cheddar and mozzarella cheeses, cream sauce, sunny-side-up egg, served with fresh salad mix garnish.</p>
-                    <p><strong>Price:</strong> 3,990 ₸</p>
-                    <label for="qty-2">Quantity:</label>
-                    <input type="number" id="qty-2" name="quantity" min="1" max="20" value="1">
-                    <button class="btn add-to-cart" type="button">Add to cart</button>
-                </article>
-
-                <article class="dish-card">
-                    <h3>Fried Eggs with Halloumi and Avocado</h3>
-                    <img src="images/Avocado_petunia.png" width="300" alt="">
-                    <p>Fried eggs served with cucumbers, tomatoes, avocado, capers, spinach, salad mix with green olives, pickled onions, and tartine bread.</p>
-                    <p><strong>Price:</strong> 4,690 ₸</p>
-                    <label for="qty-2">Quantity:</label>
-                    <input type="number" id="qty-2" name="quantity" min="1" max="20" value="1">
-                    <button class="btn add-to-cart" type="button">Add to cart</button>
-                </article>
-
-                <article class="dish-card">
-                    <h3>Tiramisu Crepes</h3>
-                    <img src="images/tiramisu_cripes.png" width="300" alt="">
-                    <p>Crepes with coffee flavor and tiramisu cream, dusted with cocoa powder, served with fresh blueberries.</p>
-                    <p><strong>Price: </strong>3,090 ₸</p><label for="qty-2">Quantity:</label>
-                    <input type="number" id="qty-2" name="quantity" min="1" max="20" value="1">
-                    <button class="btn add-to-cart" type="button">Add to cart</button>
-                </article>
-
-                <article class="dish-card">
-                    <h3>Fluffy Pancakes</h3>
-                    <img src="images/fluffy_pancakes.png" width="300" alt="">
-                    <p>Drizzled with delicate custard vanilla sauce, served with a scoop of chocolate ice cream and rich cherry jam.</p>
-                    <p><strong>Price: </strong>3,890 ₸</p>
-                    <label for="qty-2">Quantity:</label>
-                    <input type="number" id="qty-2" name="quantity" min="1" max="20" value="1">
-                    <button class="btn add-to-cart" type="button">Add to cart</button>
-                </article>
+        </header>       
+        <main class="container my-5">
+            <section class="breakfasts mb-5">
+                <h2 class="fw-bold mb-4 border-bottom pb-2">Breakfasts</h2>
+                <div class="row g-4">
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <article class="dish-card bg-white p-4 rounded-4 shadow-sm h-100 d-flex flex-column justify-content-between">
+                            <div>
+                                <h3 class="h5 fw-bold text-dark mb-3">Croque madam</h3>
+                                <img src="images/croque_madam.png" class="img-fluid rounded-3 mb-3 w-100 object-fit-cover" style="height: 180px;" alt="Croque madam">
+                                <p class="text-secondary small mb-3">Brioche with smoked turkey, cheddar and mozzarella cheeses, cream sauce, sunny-side-up egg, served with fresh salad mix garnish.</p>
+                            </div>
+                            <div>
+                                <p class="fw-bold mb-2">Price: <span class="text-dark">3,990 ₸</span></p>
+                                <div class="d-flex align-items-center gap-2 mb-3">
+                                    <label for="qty-bf-1" class="form-label mb-0 small text-muted">Quantity:</label>
+                                    <input type="number" id="qty-bf-1" name="quantity" class="form-control form-control-sm text-center" style="width: 70px;" min="1" max="20" value="1">
+                                </div>
+                                <button class="btn btn-custom-cart w-100 fw-semibold rounded-pill py-2" type="button">Add to cart</button>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <article class="dish-card bg-white p-4 rounded-4 shadow-sm h-100 d-flex flex-column justify-content-between">
+                            <div>
+                                <h3 class="h5 fw-bold text-dark mb-3">Fried Eggs with Halloumi and Avocado</h3>
+                                <img src="images/Avocado_petunia.png" class="img-fluid rounded-3 mb-3 w-100 object-fit-cover" style="height: 180px;" alt="Fried Eggs with Halloumi and Avocado">
+                                <p class="text-secondary small mb-3">Fried eggs served with cucumbers, tomatoes, avocado, capers, spinach, salad mix with green olives, pickled onions, and tartine bread.</p>
+                            </div>
+                            <div>
+                                <p class="fw-bold mb-2">Price: <span class="text-dark">4,690 ₸</span></p>
+                                <div class="d-flex align-items-center gap-2 mb-3">
+                                    <label for="qty-bf-2" class="form-label mb-0 small text-muted">Quantity:</label>
+                                    <input type="number" id="qty-bf-2" name="quantity" class="form-control form-control-sm text-center" style="width: 70px;" min="1" max="20" value="1">
+                                </div>
+                                <button class="btn btn-custom-cart w-100 fw-semibold rounded-pill py-2" type="button">Add to cart</button>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <article class="dish-card bg-white p-4 rounded-4 shadow-sm h-100 d-flex flex-column justify-content-between">
+                            <div>
+                                <h3 class="h5 fw-bold text-dark mb-3">Tiramisu Crepes</h3>
+                                <img src="images/tiramisu_cripes.png" class="img-fluid rounded-3 mb-3 w-100 object-fit-cover" style="height: 180px;" alt="Tiramisu Crepes">
+                                <p class="text-secondary small mb-3">Crepes with coffee flavor and tiramisu cream, dusted with cocoa powder, served with fresh blueberries.</p>
+                            </div>
+                            <div>
+                                <p class="fw-bold mb-2">Price: <span class="text-dark">3,090 ₸</span></p>
+                                <div class="d-flex align-items-center gap-2 mb-3">
+                                    <label for="qty-bf-3" class="form-label mb-0 small text-muted">Quantity:</label>
+                                    <input type="number" id="qty-bf-3" name="quantity" class="form-control form-control-sm text-center" style="width: 70px;" min="1" max="20" value="1">
+                                </div>
+                                <button class="btn btn-custom-cart w-100 fw-semibold rounded-pill py-2" type="button">Add to cart</button>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <article class="dish-card bg-white p-4 rounded-4 shadow-sm h-100 d-flex flex-column justify-content-between">
+                            <div>
+                                <h3 class="h5 fw-bold text-dark mb-3">Fluffy Pancakes</h3>
+                                <img src="images/fluffy_pancakes.png" class="img-fluid rounded-3 mb-3 w-100 object-fit-cover" style="height: 180px;" alt="Fluffy Pancakes">
+                                <p class="text-secondary small mb-3">Drizzled with delicate custard vanilla sauce, served with a scoop of chocolate ice cream and rich cherry jam.</p>
+                            </div>
+                            <div>
+                                <p class="fw-bold mb-2">Price: <span class="text-dark">3,890 ₸</span></p>
+                                <div class="d-flex align-items-center gap-2 mb-3">
+                                    <label for="qty-bf-4" class="form-label mb-0 small text-muted">Quantity:</label>
+                                    <input type="number" id="qty-bf-4" name="quantity" class="form-control form-control-sm text-center" style="width: 70px;" min="1" max="20" value="1">
+                                </div>
+                                <button class="btn btn-custom-cart w-100 fw-semibold rounded-pill py-2" type="button">Add to cart</button>
+                            </div>
+                        </article>
+                    </div>
+                </div>
             </section>
-
-            <section class="main-dishes">
-                <hr>
-                <h2>Main dishes</h2>
-                
-                <article class="dish-card">
-                    <h3>Borcht</h3>
-                    <img src="images/borcht.png" width="300" alt="">
-                    <p>Served with beef and fresh herbs, accompanied by a garlic butter pampushka (bread roll) and sour cream.</p>
-                    <p><strong>Price: </strong>3,390 ₸</p>
-                    <label for="qty-2">Quantity:</label>
-                    <input type="number" id="qty-2" name="quantity" min="1" max="20" value="1">
-                    <button class="btn add-to-cart" type="button">Add to cart</button>
-                </article>
-
-                <article class="dish-card">
-                    <h3>Tom Yum with Shrimps</h3>
-                    <img src="images/tom_yum.png" width="300" alt="">
-                    <p>With shrimps, button mushrooms, cherry tomatoes, spinach, cilantro, lime, and chili pepper. Served with seasoned rice.</p>
-                    <p><strong>Price: </strong>4,390 ₸</p>
-                    <label for="qty-2">Quantity:</label>
-                    <input type="number" id="qty-2" name="quantity" min="1" max="20" value="1">
-                    <button class="btn add-to-cart" type="button">Add to cart</button>
-                </article>
+            <section class="main-dishes mb-5">
+                <h2 class="fw-bold mb-4 border-bottom pb-2">Main dishes</h2>               
+                <div class="row g-4">
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <article class="dish-card bg-white p-4 rounded-4 shadow-sm h-100 d-flex flex-column justify-content-between">
+                            <div>
+                                <h3 class="h5 fw-bold text-dark mb-3">Borscht</h3>
+                                <img src="images/borcht.png" class="img-fluid rounded-3 mb-3 w-100 object-fit-cover" style="height: 180px;" alt="Borscht">
+                                <p class="text-secondary small mb-3">Served with beef and fresh herbs, accompanied by a garlic butter pampushka (bread roll) and sour cream.</p>
+                            </div>
+                            <div>
+                                <p class="fw-bold mb-2">Price: <span class="text-dark">3,390 ₸</span></p>
+                                <div class="d-flex align-items-center gap-2 mb-3">
+                                    <label for="qty-main-1" class="form-label mb-0 small text-muted">Quantity:</label>
+                                    <input type="number" id="qty-main-1" name="quantity" class="form-control form-control-sm text-center" style="width: 70px;" min="1" max="20" value="1">
+                                </div>
+                                <button class="btn btn-custom-cart w-100 fw-semibold rounded-pill py-2" type="button">Add to cart</button>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <article class="dish-card bg-white p-4 rounded-4 shadow-sm h-100 d-flex flex-column justify-content-between">
+                            <div>
+                                <h3 class="h5 fw-bold text-dark mb-3">Tom Yum with Shrimps</h3>
+                                <img src="images/tom_yum.png" class="img-fluid rounded-3 mb-3 w-100 object-fit-cover" style="height: 180px;" alt="Tom Yum with Shrimps">
+                                <p class="text-secondary small mb-3">With shrimps, button mushrooms, cherry tomatoes, spinach, cilantro, lime, and chili pepper. Served with seasoned rice.</p>
+                            </div>
+                            <div>
+                                <p class="fw-bold mb-2">Price: <span class="text-dark">4,390 ₸</span></p>
+                                <div class="d-flex align-items-center gap-2 mb-3">
+                                    <label for="qty-main-2" class="form-label mb-0 small text-muted">Quantity:</label>
+                                    <input type="number" id="qty-main-2" name="quantity" class="form-control form-control-sm text-center" style="width: 70px;" min="1" max="20" value="1">
+                                </div>
+                                <button class="btn btn-custom-cart w-100 fw-semibold rounded-pill py-2" type="button">Add to cart</button>
+                            </div>
+                        </article>
+                    </div>
+                </div>
             </section>
-
-            <section class="fast-food">
-                <hr>
-                <h2>Fast-food</h2>
-                <article class="dish-card">
-                    <h3>Classic Burger</h3>
-                    <img src="images/classic_burger.png" width="300" alt="">
-                    <p>Bun, house signature sauce, double marbled beef patty, cheddar cheese, onion, and pickles.</p>
-                    <p><strong>Price: </strong>4,390 ₸</p>
-                    <label for="qty-2">Quantity:</label>
-                    <input type="number" id="qty-2" name="quantity" min="1" max="20" value="1">
-                    <button class="btn add-to-cart" type="button">Add to cart</button>
-                </article>
-
-                <article class="dish-card">
-                    <h3>Pepperoni Pizza</h3>
-                    <img src="images/pepperoni.png" width="300" alt="">
-                    <p>Roman-style crust with tomato sauce, mozzarella, pepperoni, and jalapeños.</p>
-                    <p><strong>Price: </strong>3,990 ₸</p>
-                    <label for="qty-2">Quantity:</label>
-                    <input type="number" id="qty-2" name="quantity" min="1" max="20" value="1">
-                    <button class="btn add-to-cart" type="button">Add to cart</button>
-                </article>
+            <section class="fast-food mb-5">
+                <h2 class="fw-bold mb-4 border-bottom pb-2">Fast-food</h2>              
+                <div class="row g-4">
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <article class="dish-card bg-white p-4 rounded-4 shadow-sm h-100 d-flex flex-column justify-content-between">
+                            <div>
+                                <h3 class="h5 fw-bold text-dark mb-3">Classic Burger</h3>
+                                <img src="images/classic_burger.png" class="img-fluid rounded-3 mb-3 w-100 object-fit-cover" style="height: 180px;" alt="Classic Burger">
+                                <p class="text-secondary small mb-3">Bun, house signature sauce, double marbled beef patty, cheddar cheese, onion, and pickles.</p>
+                            </div>
+                            <div>
+                                <p class="fw-bold mb-2">Price: <span class="text-dark">4,390 ₸</span></p>
+                                <div class="d-flex align-items-center gap-2 mb-3">
+                                    <label for="qty-ff-1" class="form-label mb-0 small text-muted">Quantity:</label>
+                                    <input type="number" id="qty-ff-1" name="quantity" class="form-control form-control-sm text-center" style="width: 70px;" min="1" max="20" value="1">
+                                </div>
+                                <button class="btn btn-custom-cart w-100 fw-semibold rounded-pill py-2" type="button">Add to cart</button>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <article class="dish-card bg-white p-4 rounded-4 shadow-sm h-100 d-flex flex-column justify-content-between">
+                            <div>
+                                <h3 class="h5 fw-bold text-dark mb-3">Pepperoni Pizza</h3>
+                                <img src="images/pepperoni.png" class="img-fluid rounded-3 mb-3 w-100 object-fit-cover" style="height: 180px;" alt="Pepperoni Pizza">
+                                <p class="text-secondary small mb-3">Roman-style crust with tomato sauce, mozzarella, pepperoni, and jalapeños.</p>
+                            </div>
+                            <div>
+                                <p class="fw-bold mb-2">Price: <span class="text-dark">3,990 ₸</span></p>
+                                <div class="d-flex align-items-center gap-2 mb-3">
+                                    <label for="qty-ff-2" class="form-label mb-0 small text-muted">Quantity:</label>
+                                    <input type="number" id="qty-ff-2" name="quantity" class="form-control form-control-sm text-center" style="width: 70px;" min="1" max="20" value="1">
+                                </div>
+                                <button class="btn btn-custom-cart w-100 fw-semibold rounded-pill py-2" type="button">Add to cart</button>
+                            </div>
+                        </article>
+                    </div>
+                </div>
             </section>
-
-            <section class="beverages">
-                <hr>
-                <article class="dish-card">
-                    <h3>Cappuccino</h3>
-                    <img src="images/cappucino.png" width="300" alt="">
-                    <p><strong>Price: </strong>1,590 ₸ (300ml) / 1,890 ₸ (400ml)</p>
-                    <label for="qty-2">Quantity:</label>
-                    <input type="number" id="qty-2" name="quantity" min="1" max="20" value="1">
-                    <button class="btn add-to-cart" type="button">Add to cart</button>
-                </article>
-
-                <article class="dish-card">
-                    <h3>English Breakfast / Earl Grey</h3>
-                    <img src="images/english_tea.png" width="300" alt="">
-                    <p><strong>Price: </strong>1,190 ₸ (400ml) / 1,590 ₸ (600ml)</p>
-                    <label for="qty-2">Quantity:</label>
-                    <input type="number" id="qty-2" name="quantity" min="1" max="20" value="1">
-                    <button class="btn add-to-cart" type="button">Add to cart</button>
-                </article>
-
-                <article class="dish-card">
-                    <h3>Matcha Frappuccino (470 ml)</h3>
-                    <img src="images/matcha_frappuccino.png" width="300" alt="">
-                    <p><strong>Price: 2,890 ₸</strong></p>
-                    <label for="qty-2">Quantity:</label>
-                    <input type="number" id="qty-2" name="quantity" min="1" max="20" value="1">
-                    <button class="btn add-to-cart" type="button">Add to cart</button>
-                </article>
-
-                <article class="dish-card">
-                    <h3>Citrus Mix</h3>
-                    <img src="images/citrus_mix.png" alt="" width="300">
-                    <p><strong>Price: </strong>1,890 ₸ (470ml) / 3,290 ₸ (1000ml)</p>
-                    <label for="qty-2">Quantity:</label>
-                    <input type="number" id="qty-2" name="quantity" min="1" max="20" value="1">
-                    <button class="btn add-to-cart" type="button">Add to cart</button>
-                </article>
+            <section class="beverages mb-5">
+                <h2 class="fw-bold mb-4 border-bottom pb-2">Beverages</h2>             
+                <div class="row g-4">
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <article class="dish-card bg-white p-4 rounded-4 shadow-sm h-100 d-flex flex-column justify-content-between">
+                            <div>
+                                <h3 class="h5 fw-bold text-dark mb-3">Cappuccino</h3>
+                                <img src="images/cappucino.png" class="img-fluid rounded-3 mb-3 w-100 object-fit-cover" style="height: 180px;" alt="Cappuccino">
+                                <p class="text-secondary small mb-3"><strong>Price:</strong> 1,590 ₸ (300ml) / 1,890 ₸ (400ml)</p>
+                            </div>
+                            <div>
+                                <div class="d-flex align-items-center gap-2 mb-3">
+                                    <label for="qty-bev-1" class="form-label mb-0 small text-muted">Quantity:</label>
+                                    <input type="number" id="qty-bev-1" name="quantity" class="form-control form-control-sm text-center" style="width: 70px;" min="1" max="20" value="1">
+                                </div>
+                                <button class="btn btn-custom-cart w-100 fw-semibold rounded-pill py-2" type="button">Add to cart</button>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <article class="dish-card bg-white p-4 rounded-4 shadow-sm h-100 d-flex flex-column justify-content-between">
+                            <div>
+                                <h3 class="h5 fw-bold text-dark mb-3">English Breakfast / Earl Grey</h3>
+                                <img src="images/english_tea.png" class="img-fluid rounded-3 mb-3 w-100 object-fit-cover" style="height: 180px;" alt="English Tea">
+                                <p class="text-secondary small mb-3"><strong>Price:</strong> 1,190 ₸ (400ml) / 1,590 ₸ (600ml)</p>
+                            </div>
+                            <div>
+                                <div class="d-flex align-items-center gap-2 mb-3">
+                                    <label for="qty-bev-2" class="form-label mb-0 small text-muted">Quantity:</label>
+                                    <input type="number" id="qty-bev-2" name="quantity" class="form-control form-control-sm text-center" style="width: 70px;" min="1" max="20" value="1">
+                                </div>
+                                <button class="btn btn-custom-cart w-100 fw-semibold rounded-pill py-2" type="button">Add to cart</button>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <article class="dish-card bg-white p-4 rounded-4 shadow-sm h-100 d-flex flex-column justify-content-between">
+                            <div>
+                                <h3 class="h5 fw-bold text-dark mb-3">Matcha Frappuccino (470 ml)</h3>
+                                <img src="images/matcha_frappuccino.png" class="img-fluid rounded-3 mb-3 w-100 object-fit-cover" style="height: 180px;" alt="Matcha Frappuccino">
+                                <p class="text-secondary small mb-3"><strong>Price:</strong> 2,890 ₸</p>
+                            </div>
+                            <div>
+                                <div class="d-flex align-items-center gap-2 mb-3">
+                                    <label for="qty-bev-3" class="form-label mb-0 small text-muted">Quantity:</label>
+                                    <input type="number" id="qty-bev-3" name="quantity" class="form-control form-control-sm text-center" style="width: 70px;" min="1" max="20" value="1">
+                                </div>
+                                <button class="btn btn-custom-cart w-100 fw-semibold rounded-pill py-2" type="button">Add to cart</button>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <article class="dish-card bg-white p-4 rounded-4 shadow-sm h-100 d-flex flex-column justify-content-between">
+                            <div>
+                                <h3 class="h5 fw-bold text-dark mb-3">Citrus Mix</h3>
+                                <img src="images/citrus_mix.png" class="img-fluid rounded-3 mb-3 w-100 object-fit-cover" style="height: 180px;" alt="Citrus Mix">
+                                <p class="text-secondary small mb-3"><strong>Price:</strong> 1,890 ₸ (470ml) / 3,290 ₸ (1000ml)</p>
+                            </div>
+                            <div>
+                                <div class="d-flex align-items-center gap-2 mb-3">
+                                    <label for="qty-bev-4" class="form-label mb-0 small text-muted">Quantity:</label>
+                                    <input type="number" id="qty-bev-4" name="quantity" class="form-control form-control-sm text-center" style="width: 70px;" min="1" max="20" value="1">
+                                </div>
+                                <button class="btn btn-custom-cart w-100 fw-semibold rounded-pill py-2" type="button">Add to cart</button>
+                            </div>
+                        </article>
+                    </div>
+                </div>
             </section>
-         
-             
         </main>
-
-        <hr>
-
-        <footer>
-            <hr>
-            <p>
-                Phone: <a href="tel:+77758263926">+7 (775) 826-39-26</a> &bull;
-                Email: <a href="mailto:lcfamilygroupkz@gmail.com">lcfamilygroupkz@gmail.com</a> &bull;
-                WhatsApp: <a href="https://wa.me/77758263926" target="_blank" rel="noopener">Contact Delish</a> &bull;
-                Instagram: <a href="https://www.instagram.com/delish.astana" target="_blank" rel="noopener">@delish.astana</a>
-            </p>
-            <p><small>&copy; 2026 Delish City Cafe. All rights reserved. &copy; <a href="colophon.html">About the development</a></small></p>
+        <footer class="custom-footer text-white py-4 mt-5 text-center">
+            <div class="container d-flex flex-column align-items-center gap-2">
+                <p class="mb-0 small">
+                    Phone: <a href="tel:+77758263926" class="text-white text-decoration-underline">+7 (775) 826-39-26</a> &bull;
+                    Email: <a href="mailto:lcfamilygroupkz@gmail.com" class="text-white text-decoration-underline">lcfamilygroupkz@gmail.com</a> &bull;
+                    WhatsApp: <a href="https://wa.me/77758263926" target="_blank" rel="noopener" class="text-white text-decoration-underline">Contact Delish</a> &bull;
+                    Instagram: <a href="https://www.instagram.com/delish.astana" target="_blank" rel="noopener" class="text-white text-decoration-underline">@delish.astana</a>
+                </p>
+                <p class="mb-0 small opacity-75">&copy; 2026 Delish City Cafe. All rights reserved. &copy; <a href="colophon.html" class="text-white text-decoration-underline">About the development</a></p>
+            </div>
         </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     </body>
 </html>
