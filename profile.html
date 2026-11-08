@@ -34,22 +34,23 @@
         </header>
         <main class="container flex-grow-1 d-flex align-items-center justify-content-center my-5">
             <section class="card border-0 shadow-sm rounded-4 p-4 p-md-5 bg-white w-100" style="max-width: 650px;">
-                <h2 class="h3 fw-bold border-bottom pb-3 mb-4" style="color: #5CBEC4;">Accounts details</h2>            
+                <h2 class="h3 fw-bold border-bottom pb-3 mb-4" style="color: #5CBEC4;">Accounts details</h2>
                 <div class="row align-items-start g-4">
                     <div class="col-12 col-sm-5 text-center text-sm-start">
-                        <img src="images/Dias_Nazarov.jpg" class="img-fluid rounded-4 shadow-sm object-fit-cover w-100" style="max-height: 280px;" alt="Dias Nazarov">
+                        <img id="profilePhoto" src="images/Dias_Nazarov.jpg" class="img-fluid rounded-4 shadow-sm object-fit-cover w-100" style="max-height: 280px;" alt="Profile photo">
                     </div>
                     <div class="col-12 col-sm-7 pt-2">
                         <dl class="row mb-0 gy-3">
                             <dt class="col-5 text-secondary fw-semibold">Name</dt>
-                            <dd class="col-7 fw-bold text-dark mb-0">Dias Nazarov</dd>
+                            <dd id="profileName" class="col-7 fw-bold text-dark mb-0 text-break">—</dd>
 
                             <dt class="col-5 text-secondary fw-semibold">Email</dt>
-                            <dd class="col-7 fw-bold text-dark mb-0 text-break">sayobuenos@gmail.com</dd>
+                            <dd id="profileEmail" class="col-7 fw-bold text-dark mb-0 text-break">—</dd>
 
                             <dt class="col-5 text-secondary fw-semibold">Member since:</dt>
-                            <dd class="col-7 fw-bold text-dark mb-0">march, 2021</dd>
+                            <dd id="profileSince" class="col-7 fw-bold text-dark mb-0">—</dd>
                         </dl>
+                        <button type="button" id="logoutBtn" class="btn btn-outline-secondary fw-semibold rounded-pill px-4 mt-4">Log out</button>
                     </div>
                 </div>
             </section>
@@ -66,5 +67,7 @@
             </div>
         </footer>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="js/profile.js"></script>
     </body>
 </html>
