@@ -11,7 +11,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const checkoutForm = document.getElementById('checkout-form');
     const orderErrorEl = document.getElementById('order-error');
     const orderConfirmation = document.getElementById('order-confirmation');
-    let cart = JSON.parse(localStorage.getItem('delishCart')) || [];
+    let cart = [];
+    try {
+        const saved = JSON.parse(localStorage.getItem('delishCart'));
+        cart = Array.isArray(saved) ? saved : [];
+    } catch (e) {
+        cart = [];
+    }
+    function notifyCartChanged() {
+        window.dispatchEvent(new Event('delish:cart-changed'));
+    }
     function renderCart() {
         if (!cartItemsContainer) return;
         cartItemsContainer.innerHTML = '';
@@ -48,13 +57,15 @@ document.addEventListener('DOMContentLoaded', () => {
         
             qtyInput.addEventListener('change', (e) => {
                 const newQty = parseInt(e.target.value, 10);
-                if (newQty > 0) {
-                    cart[index].quantity = newQty;
-                } else {
-                    cart.splice(index, 1);
+                if (isNaN(newQty) || newQty < 1) {
+                    // некорректное значение: возвращаем прежнее количество (удаление - кнопкой Remove)
+                    e.target.value = cart[index].quantity;
+                    return;
                 }
+                cart[index].quantity = Math.min(newQty, 20);
                 localStorage.setItem('delishCart', JSON.stringify(cart));
                 renderCart();
+                notifyCartChanged();
             });
             tdQty.appendChild(qtyInput);
             tr.appendChild(tdQty);
@@ -71,6 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 cart.splice(index, 1);
                 localStorage.setItem('delishCart', JSON.stringify(cart));
                 renderCart();
+                notifyCartChanged();
             });
             tdAction.appendChild(removeBtn);
             tr.appendChild(tdAction);
@@ -85,6 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
             cart = [];
             localStorage.removeItem('delishCart');
             renderCart();
+            notifyCartChanged();
         });
     }
     if (checkoutForm) {
@@ -149,6 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
             orderConfirmation.classList.remove('hidden');
             cart = [];
             localStorage.removeItem('delishCart');
+            notifyCartChanged();
         });
     }
     function showError(message) {

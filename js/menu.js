@@ -1,32 +1,51 @@
 'use strict';
 
 document.addEventListener('DOMContentLoaded', () => {
-    let cart = JSON.parse(localStorage.getItem('delishCart')) || [];
+    const CART_KEY = 'delishCart';
+
+    function loadCart() {
+        try {
+            const data = JSON.parse(localStorage.getItem(CART_KEY));
+            return Array.isArray(data) ? data : [];
+        } catch (e) {
+            return [];
+        }
+    }
+
     const dishCards = document.querySelectorAll('.dish-card');
     dishCards.forEach((card, index) => {
         const titleEl = card.querySelector('h3');
         const priceEl = card.querySelector('.fw-bold span') || card.querySelector('.fw-bold');
-        const qtyInput = card.querySelector('input[type="number"]');
         const addBtn = card.querySelector('button');
         if (!titleEl || !addBtn) return;
+
+        // Количество выбирается в корзине, поэтому убираем поле "Quantity" из карточки
+        const qtyInput = card.querySelector('input[type="number"]');
+        if (qtyInput) {
+            const qtyWrap = qtyInput.closest('.d-flex') || qtyInput.parentElement;
+            qtyWrap.remove();
+        }
+
         addBtn.addEventListener('click', () => {
             const name = titleEl.textContent.trim();
             const price = parseInt(priceEl.textContent.replace(/[^0-9]/g, ''), 10) || 0;
-            const quantity = qtyInput ? parseInt(qtyInput.value, 10) || 1 : 1;
-            const existingItem = cart.find(item => item.name === name);
-            if (existingItem) {
-                existingItem.quantity += quantity;
-            } else {
+            const cart = loadCart();
+            const alreadyInCart = cart.some(item => item.name === name);
+
+            // Позиция добавляется один раз (quantity = 1); дальше количество меняется в корзине
+            if (!alreadyInCart) {
                 cart.push({
                     id: 'dish-' + index,
                     name: name,
                     price: price,
-                    quantity: quantity
+                    quantity: 1
                 });
+                localStorage.setItem(CART_KEY, JSON.stringify(cart));
+                window.dispatchEvent(new Event('delish:cart-changed'));
             }
-            localStorage.setItem('delishCart', JSON.stringify(cart));
+
             const oldText = addBtn.textContent;
-            addBtn.textContent = 'Added ✓';
+            addBtn.textContent = alreadyInCart ? 'Already in cart' : 'Added ✓';
             addBtn.classList.add('btn-success');
             addBtn.classList.remove('btn-custom-cart');
             setTimeout(() => {
