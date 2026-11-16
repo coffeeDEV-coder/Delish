@@ -120,9 +120,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 nameInput.focus();
                 return;
             }
-            const phoneRegex = /^\+?[0-9\s\-\(\)]{10,20}$/;
-            if (!phoneRegex.test(phone)) {
-                showError('Please enter a valid phone number (e.g. +7 700 000 00 00).');
+            const phoneDigits = phone.replace(/\D/g, '');
+            if (phoneDigits.length < 11 || /^7(\d)\1{9}$/.test(phoneDigits)) {
+                showError('Please enter all 10 digits after +7 (e.g. +7 (700) 000-00-00).');
                 phoneInput.focus();
                 return;
             }
@@ -165,11 +165,66 @@ document.addEventListener('DOMContentLoaded', () => {
             notifyCartChanged();
         });
     }
+    /* ---------- phone mask: "+7" is fixed, max 11 digits in total ---------- */
+
+    function formatPhone(n) {
+        let out = '+7';
+        if (n.length > 0) out += ' (' + n.slice(0, 3);
+        if (n.length >= 3) out += ')';
+        if (n.length > 3) out += ' ' + n.slice(3, 6);
+        if (n.length > 6) out += '-' + n.slice(6, 8);
+        if (n.length > 8) out += '-' + n.slice(8, 10);
+        return out;
+    }
+
+    // Returns the 10 national digits (without the country code 7/8)
+    function parseNational(value) {
+        const d = value.replace(/\D/g, '');
+        if (value.startsWith('+7')) return d.slice(1, 11);
+        if (d.length >= 11 && /^[78]/.test(d)) return d.slice(1, 11);
+        return d.slice(0, 10);
+    }
+
+    function setupPhoneMask(input) {
+        input.inputMode = 'tel';
+        let prev = '';
+        const apply = (n) => {
+            prev = n;
+            input.value = formatPhone(n);
+            try { input.setSelectionRange(input.value.length, input.value.length); } catch (e) { }
+        };
+        input.addEventListener('input', (e) => {
+            let n = parseNational(input.value);
+            // Backspace over a formatting symbol "(", ")", " " or "-" removes the previous digit
+            if (e.inputType === 'deleteContentBackward' && n === prev && prev.length > 0) {
+                n = n.slice(0, -1);
+            }
+            apply(n);
+        });
+        input.addEventListener('paste', (e) => {
+            e.preventDefault();
+            const text = (e.clipboardData || window.clipboardData).getData('text');
+            let d = text.replace(/\D/g, '');
+            if (d.length >= 11 && /^[78]/.test(d)) d = d.slice(1);
+            apply(d.slice(0, 10));
+            input.dispatchEvent(new Event('input', { bubbles: true }));
+        });
+        input.addEventListener('focus', () => {
+            setTimeout(() => {
+                try { input.setSelectionRange(input.value.length, input.value.length); } catch (e) { }
+            }, 0);
+        });
+        apply('');
+        return { reset: () => apply('') };
+    }
+
     function showError(message) {
         if (orderErrorEl) {
             orderErrorEl.textContent = message;
             orderErrorEl.classList.remove('hidden');
         }
     }
+    const orderPhoneEl = document.getElementById('order-phone');
+    if (orderPhoneEl) setupPhoneMask(orderPhoneEl);
     renderCart();
 });

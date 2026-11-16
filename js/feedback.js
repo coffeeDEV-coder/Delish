@@ -40,6 +40,61 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     let reviews = loadReviews();
 
+    /* ---------- phone mask: "+7" is fixed, max 11 digits in total ---------- */
+
+    function formatPhone(n) {
+        let out = '+7';
+        if (n.length > 0) out += ' (' + n.slice(0, 3);
+        if (n.length >= 3) out += ')';
+        if (n.length > 3) out += ' ' + n.slice(3, 6);
+        if (n.length > 6) out += '-' + n.slice(6, 8);
+        if (n.length > 8) out += '-' + n.slice(8, 10);
+        return out;
+    }
+
+    // Returns the 10 national digits (without the country code 7/8)
+    function parseNational(value) {
+        const d = value.replace(/\D/g, '');
+        if (value.startsWith('+7')) return d.slice(1, 11);
+        if (d.length >= 11 && /^[78]/.test(d)) return d.slice(1, 11);
+        return d.slice(0, 10);
+    }
+
+    function setupPhoneMask(input) {
+        input.inputMode = 'tel';
+        let prev = '';
+        const apply = (n) => {
+            prev = n;
+            input.value = formatPhone(n);
+            try { input.setSelectionRange(input.value.length, input.value.length); } catch (e) { }
+        };
+        input.addEventListener('input', (e) => {
+            let n = parseNational(input.value);
+            // Backspace over a formatting symbol "(", ")", " " or "-" removes the previous digit
+            if (e.inputType === 'deleteContentBackward' && n === prev && prev.length > 0) {
+                n = n.slice(0, -1);
+            }
+            apply(n);
+        });
+        input.addEventListener('paste', (e) => {
+            e.preventDefault();
+            const text = (e.clipboardData || window.clipboardData).getData('text');
+            let d = text.replace(/\D/g, '');
+            if (d.length >= 11 && /^[78]/.test(d)) d = d.slice(1);
+            apply(d.slice(0, 10));
+            input.dispatchEvent(new Event('input', { bubbles: true }));
+        });
+        input.addEventListener('focus', () => {
+            setTimeout(() => {
+                try { input.setSelectionRange(input.value.length, input.value.length); } catch (e) { }
+            }, 0);
+        });
+        apply('');
+        return { reset: () => apply('') };
+    }
+
+    const phoneMask = setupPhoneMask(phoneInput);
+
     /* ---------- date limits ---------- */
 
     function toLocalISO(date) {
@@ -154,15 +209,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function checkPhone(v) {
-        if (!v) return 'Phone number is required.';
-        if (!/^\+?[0-9\s\-()]+$/.test(v)) return 'Phone may contain only digits, spaces, + - ( ).';
-        if (v.indexOf('+') > 0) return 'The + sign is allowed only at the beginning.';
-        const digits = v.replace(/\D/g, '');
-        if (digits.length < 10 || digits.length > 15) return 'Phone must contain 10-15 digits (e.g. +7 700 000 00 00).';
-        if (/^(\+7|7|8)/.test(v.replace(/[\s\-()]/g, '')) && digits.length !== 11) {
-            return 'A Kazakhstan/Russia number must have 11 digits, e.g. +7 700 000 00 00.';
-        }
-        if (/^(\d)\1+$/.test(digits)) return 'Please enter a real phone number.';
+        const digits = v.replace(/\D/g, ''); // includes the fixed leading 7
+        if (digits.length <= 1) return 'Phone number is required.';
+        if (digits.length < 11) return 'Enter all 10 digits after +7, e.g. +7 (700) 000-00-00.';
+        if (/^7(\d)\1{9}$/.test(digits)) return 'Please enter a real phone number.';
         return '';
     }
 
@@ -307,6 +357,6 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('reset', () => {
         hideMessage();
         fields.forEach(clearState);
-        setTimeout(updateCounter, 0);
+        setTimeout(() => { updateCounter(); phoneMask.reset(); }, 0);
     });
 });
