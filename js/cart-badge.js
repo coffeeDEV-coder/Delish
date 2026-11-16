@@ -1,14 +1,16 @@
 'use strict';
 
-// Бейдж с количеством позиций в корзине над ссылкой "Cart" в navbar.
-// Считаются уникальные позиции (строки в корзине), а не общее число порций.
 (function () {
     const CART_KEY = 'delishCart';
 
-    function getPositionsCount() {
+    function getItemsCount() {
         try {
             const cart = JSON.parse(localStorage.getItem(CART_KEY));
-            return Array.isArray(cart) ? cart.length : 0;
+            if (!Array.isArray(cart)) return 0;
+            return cart.reduce(function (sum, item) {
+                var q = parseInt(item && item.quantity, 10);
+                return sum + (q > 0 ? q : 0);
+            }, 0);
         } catch (e) {
             return 0;
         }
@@ -50,20 +52,17 @@
         link.appendChild(badge);
 
         function update() {
-            const count = getPositionsCount();
+            const count = getItemsCount();
             badge.textContent = count > 99 ? '99+' : String(count);
             badge.style.display = count > 0 ? 'flex' : 'none';
             link.setAttribute('aria-label', count > 0 ? 'Cart, ' + count + ' items' : 'Cart');
         }
 
         update();
-        // Обновление при изменении корзины на этой странице (menu.js / cart.js)
         window.addEventListener('delish:cart-changed', update);
-        // Обновление при изменении корзины в другой вкладке
         window.addEventListener('storage', function (e) {
             if (e.key === CART_KEY || e.key === null) update();
         });
-        // Возврат на страницу через кнопку "Назад" (bfcache)
         window.addEventListener('pageshow', update);
     }
 
